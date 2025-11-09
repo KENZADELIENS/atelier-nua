@@ -75,13 +75,4 @@
       open: true,
     },
     base: '/nua-atelier/'
-    build: {
-      assetsDir: 'assets',
-      outDir: 'dist',
-      rollupOptions: {
-        output: {
-          manualChunks: undefined
-        }
-      }
-    }
   });
