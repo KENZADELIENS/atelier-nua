@@ -1,5 +1,5 @@
 {
-      "name": "Art Gallery Website Wireframe (Copy) (Copy) (Copy) (Copy) (Copy)",
+      "name": "nua-atelier",
       "version": "0.1.0",
       "private": true,
       "dependencies": {
@@ -29,9 +29,9 @@
             "@radix-ui/react-toggle": "^1.1.2",
             "@radix-ui/react-toggle-group": "^1.1.2",
             "@radix-ui/react-tooltip": "^1.1.8",
-            "@vitejs/plugin-react": "*",
+            "@vitejs/plugin-react": "^4.2.0",
             "class-variance-authority": "^0.7.1",
-            "clsx": "*",
+            "clsx": "^2.0.0",
             "cmdk": "^1.1.1",
             "embla-carousel-react": "^8.6.0",
             "input-otp": "^1.4.2",
@@ -45,9 +45,8 @@
             "react-router-dom": "^7.9.5",
             "recharts": "^2.15.2",
             "sonner": "^2.0.3",
-            "tailwind-merge": "*",
-            "vaul": "^1.1.2",
-            "vite": "*"
+            "tailwind-merge": "^2.1.0",
+            "vaul": "^1.1.2"
       },
       "devDependencies": {
             "@tailwindcss/postcss": "^4.1.17",
@@ -61,7 +60,7 @@
             "tailwindcss": "^4.1.17",
             "tailwindcss-animate": "^1.0.7",
             "typescript": "^5.9.3",
-            "vite": "6.3.5"
+            "vite": "^6.4.1"
       },
       "scripts": {
             "dev": "vite",
