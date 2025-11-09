@@ -11,7 +11,8 @@ export default function App() {
     <BrowserRouter basename="/nua-atelier">
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<Navigate to="/hub" replace />} />
+          {/* Show the Home (accueil) page at the root. Change to /hub if you prefer the hub first. */}
+          <Route index element={<Navigate to="/home" replace />} />
           <Route path="hub" element={<HubPage />} />
           <Route path="home" element={<HomePage />} />
           <Route path="exhibitions" element={<ExhibitionsPage />} />
