@@ -1,20 +1,17 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Layout } from './components/Layout';
 import { HomePage } from './components/HomePage';
 import { ExhibitionsPage } from './components/ExhibitionsPage';
 import { VisitPage } from './components/VisitPage';
 import { AboutPage } from './components/AboutPage';
-import { HubPage } from './components/HubPage';
 
 export default function App() {
   return (
     <BrowserRouter basename="/nua-atelier">
       <Routes>
         <Route path="/" element={<Layout />}>
-          {/* Render the Home (accueil) page directly at root so visitors see the carousel immediately */}
+          {/* Show the carousel page immediately at root / */}
           <Route index element={<HomePage />} />
-          <Route path="hub" element={<HubPage />} />
-          <Route path="home" element={<HomePage />} />
           <Route path="exhibitions" element={<ExhibitionsPage />} />
           <Route path="visit" element={<VisitPage />} />
           <Route path="about" element={<AboutPage />} />

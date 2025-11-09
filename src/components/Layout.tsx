@@ -4,7 +4,7 @@ import { Link, Outlet, useLocation } from 'react-router-dom';
 
 export function Layout() {
   const navItems = [
-    { path: '/home', label: 'Accueil' },
+    { path: '/', label: 'Accueil' },
     { path: '/exhibitions', label: 'Expositions' },
     { path: '/visit', label: 'Visiter' },
     { path: '/about', label: 'À propos' }
@@ -24,7 +24,7 @@ export function Layout() {
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link 
-              to="/hub"
+              to="/"
               className="cursor-pointer group"
             >
               <h1 className="text-primary mb-0" style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', letterSpacing: '0.1em' }}>NUA ATELIER</h1>
@@ -117,7 +117,7 @@ export function Layout() {
                   Informations pratiques
                 </Link>
                 <Link 
-                  to="/home"
+                  to="/"
                   className="hover:text-primary transition-colors block text-left"
                 >
                   Actualités
