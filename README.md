@@ -20,6 +20,49 @@ npm run dev
 npm run build
 ```
 
+## Déploiement automatique (GitHub Pages)
+
+Le site se déploie automatiquement sur **GitHub Pages** à chaque push sur la branche `main`.
+
+### URL publique
+```
+https://KENZADELIENS.github.io/atelier-nua/
+```
+Remplacez `KENZADELIENS` si votre nom d'utilisateur GitHub est différent.
+
+### Pré-requis côté GitHub (à faire une seule fois)
+1. Créez le dépôt public `atelier-nua` si ce n'est pas déjà fait.
+2. Allez dans Settings → Pages → Source = GitHub Actions (si pas déjà actif).
+
+### Ce que fait le workflow
+1. Installe les dépendances (`npm ci`)
+2. Construit le site (`npm run build`) → génère `dist/`
+3. Publie le contenu sur GitHub Pages.
+
+### Vérifier le déploiement
+1. Onglet **Actions** : dernier workflow vert ✅
+2. Onglet **Settings → Pages** : l'URL s'affiche
+3. Tester l'URL publique en navigation privée (cache propre)
+
+### Mise à jour du site
+```
+git add .
+git commit -m "Update contenu"
+git push origin main
+```
+Attendre ~2 minutes que l'action termine.
+
+### Si l'URL renvoie 404
+- Vérifier que le workflow est bien dans `.github/workflows/deploy.yml`
+- Confirmer que la branche est `main`
+- Regarder les logs de l'action (étape "Build site")
+
+### Pour un déploiement manuel alternatif
+Le script `npm run deploy` (dans `src/package.json`) pousse sur une branche `gh-pages`. Utilisez-le uniquement si vous préférez ne pas employer GitHub Actions.
+
+---
+
+
 ## Sécurité
 
 ### Mesures de sécurité implémentées
