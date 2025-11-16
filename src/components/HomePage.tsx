@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import bannerImage1 from '@/assets/c78f50749baacae6135ece7238683ff93f4df028.png';
 import bannerImage2 from '@/assets/8aa6508c3d3ec9554057bec1d5f34a701809157a.png';
 import bannerImage3 from '@/assets/7a2752457eae20e59808d72b21ed53c3ec485d64.png';
@@ -14,6 +14,7 @@ const bannerImages = [bannerImage1, bannerImage2, bannerImage3, bannerImage4];
 
 export function HomePage() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const prevTitle = document.title;
@@ -159,7 +160,9 @@ export function HomePage() {
                   alt="Mannequin en manteau vintage avec haut-de-forme" 
                   loading="lazy"
                   decoding="async"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 cursor-pointer"
+                  // fallback navigation in case Link isn't handling the click for any reason
+                  onClick={(e) => { e.preventDefault(); navigate('/exhibitions/4'); }}
                 />
               </div>
               <div className="p-6 md:p-8 space-y-3">
@@ -174,7 +177,8 @@ export function HomePage() {
                     alt="Collection de robes haute couture avec fresques classiques" 
                     loading="lazy"
                     decoding="async"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 cursor-pointer"
+                    onClick={(e) => { e.preventDefault(); navigate('/exhibitions/5'); }}
                   />
               </div>
               <div className="p-6 md:p-8 space-y-3">

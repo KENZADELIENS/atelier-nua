@@ -60,10 +60,14 @@
             "tailwindcss": "^4.1.17",
             "tailwindcss-animate": "^1.0.7",
             "typescript": "^5.9.3",
-            "vite": "^6.4.1"
+            "vite": "^6.4.1",
+            "playwright": "^1.37.0",
+            "http-server": "^14.1.1"
       },
       "scripts": {
             "dev": "vite",
-            "build": "vite build"
+            "build": "vite build",
+            "prerender": "node ./scripts/prerender.js",
+            "build:prerender": "npm run build && npm run prerender"
       }
 }

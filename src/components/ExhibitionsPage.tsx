@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import expo1 from '@/assets/8bf368da1fdcfe53953f05698442e0a99577f3e5.png';
 import expo2 from '@/assets/7166cc1fd85092987888c984c630d6d9a1742d58.png';
 import expo3 from '@/assets/9e2dd313be55c7ba9c93fedfa68209361f708168.png';
@@ -88,11 +89,16 @@ export function ExhibitionsPage() {
       <section className="container mx-auto px-4 md:px-6 py-12 md:py-20">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-10 mb-12 md:mb-16 max-w-6xl mx-auto">
           {exhibitions.map((expo) => (
-            <div key={expo.id} id={`expo-${expo.id}`} className="group cursor-pointer">
+            <Link
+              key={expo.id}
+              id={`expo-${expo.id}`}
+              to={`/exhibitions/${expo.id}`}
+              className="group cursor-pointer"
+            >
               <div className="bg-card overflow-hidden mb-5 border border-gris-perle">
                 <div className="h-72 md:h-96 overflow-hidden">
-                  <img 
-                    src={expo.image} 
+                  <img
+                    src={expo.image}
                     alt={expo.title}
                     loading="lazy"
                     decoding="async"
@@ -107,7 +113,7 @@ export function ExhibitionsPage() {
                   <span className="italic font-accent">{expo.dates}</span>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </section>
