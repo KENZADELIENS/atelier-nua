@@ -100,11 +100,13 @@ export function HomePage() {
             <Link key={expo.id} to={`/exhibitions/${expo.id}`} className="group cursor-pointer">
               <div className="bg-card overflow-hidden mb-4">
                 <div className="h-64 md:h-80 overflow-hidden">
-                  <img
-                    src={expo.img}
-                    alt={expo.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
+                    <img
+                      src={expo.img}
+                      alt={expo.title}
+                      loading="lazy"
+                      decoding="async"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
                 </div>
               </div>
               <div className="space-y-2">
@@ -127,6 +129,8 @@ export function HomePage() {
                 <img 
                   src={content1} 
                   alt="Mannequin en manteau vintage avec haut-de-forme" 
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
@@ -137,11 +141,13 @@ export function HomePage() {
             </Link>
             <Link to={`/exhibitions/5`} className="group cursor-pointer bg-card block">
               <div className="h-64 md:h-96 overflow-hidden">
-                <img 
-                  src={content2} 
-                  alt="Collection de robes haute couture avec fresques classiques" 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
+                  <img 
+                    src={content2} 
+                    alt="Collection de robes haute couture avec fresques classiques" 
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
               </div>
               <div className="p-6 md:p-8 space-y-3">
                 <h3 className="text-primary">Art & Couture</h3>
