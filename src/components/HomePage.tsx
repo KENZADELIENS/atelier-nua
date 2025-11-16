@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import bannerImage1 from '@/assets/c78f50749baacae6135ece7238683ff93f4df028.png';
 import bannerImage2 from '@/assets/8aa6508c3d3ec9554057bec1d5f34a701809157a.png';
 import bannerImage3 from '@/assets/7a2752457eae20e59808d72b21ed53c3ec485d64.png';
@@ -91,56 +92,28 @@ export function HomePage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          <div className="group cursor-pointer">
-            <div className="bg-card overflow-hidden mb-4">
-              <div className="h-64 md:h-80 overflow-hidden">
-                <img 
-                  src={exhibition1} 
-                  alt="Exposition de bijoux et mode" 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
+          {[
+            { id: 1, img: exhibition1, title: 'Éclats Précieux', desc: "Une collection raffinée de bijoux contemporains", dates: "Jusqu'au 15 mars 2026" },
+            { id: 2, img: exhibition2, title: "L'Or de la Maison", desc: "Maroquinerie d'exception et savoir-faire artisanal", dates: "Jusqu'au 28 février 2026" },
+            { id: 3, img: exhibition3, title: 'Silhouettes Intemporelles', desc: "L'élégance de la haute couture revisitée", dates: "Jusqu'au 10 avril 2026" }
+          ].map((expo) => (
+            <Link key={expo.id} to={`/exhibitions#expo-${expo.id}`} className="group cursor-pointer">
+              <div className="bg-card overflow-hidden mb-4">
+                <div className="h-64 md:h-80 overflow-hidden">
+                  <img
+                    src={expo.img}
+                    alt={expo.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
               </div>
-            </div>
-            <div className="space-y-2">
-              <h3 className="text-primary">Éclats Précieux</h3>
-              <p className="text-gris-charbon">Une collection raffinée de bijoux contemporains</p>
-              <p className="text-muted-foreground italic font-accent">Jusqu'au 15 mars 2026</p>
-            </div>
-          </div>
-
-          <div className="group cursor-pointer">
-            <div className="bg-card overflow-hidden mb-4">
-              <div className="h-64 md:h-80 overflow-hidden">
-                <img 
-                  src={exhibition2} 
-                  alt="Sac à main de luxe" 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
+              <div className="space-y-2">
+                <h3 className="text-primary">{expo.title}</h3>
+                <p className="text-gris-charbon">{expo.desc}</p>
+                <p className="text-muted-foreground italic font-accent">{expo.dates}</p>
               </div>
-            </div>
-            <div className="space-y-2">
-              <h3 className="text-primary">L'Or de la Maison</h3>
-              <p className="text-gris-charbon">Maroquinerie d'exception et savoir-faire artisanal</p>
-              <p className="text-muted-foreground italic font-accent">Jusqu'au 28 février 2026</p>
-            </div>
-          </div>
-
-          <div className="group cursor-pointer">
-            <div className="bg-card overflow-hidden mb-4">
-              <div className="h-64 md:h-80 overflow-hidden">
-                <img 
-                  src={exhibition3} 
-                  alt="Robe de soirée haute couture" 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-            </div>
-            <div className="space-y-2">
-              <h3 className="text-primary">Silhouettes Intemporelles</h3>
-              <p className="text-gris-charbon">L'élégance de la haute couture revisitée</p>
-              <p className="text-muted-foreground italic font-accent">Jusqu'au 10 avril 2026</p>
-            </div>
-          </div>
+            </Link>
+          ))}
         </div>
       </section>
 
