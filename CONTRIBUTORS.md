@@ -4,20 +4,18 @@ Ce projet a été développé en collaboration par :
 
 ## 🎨 Équipe de développement
 
-- **[TON NOM]** - Lead Developer & Designer
+- **KENZA** - Lead Developer & Project Manager
   - GitHub: [@KENZADELIENS](https://github.com/KENZADELIENS)
+  - Contributions : Développement, déploiement, gestion du projet
   
-- **[NOM PERSONNE 2]** - [Son rôle, ex: UI/UX Designer]
-  - GitHub: [@username2](https://github.com/username2)
-  - Contributions : Design, interfaces utilisateur
+- **LISA** - Designer & Developer
+  - Contributions : Design, interfaces utilisateur, développement
   
-- **[NOM PERSONNE 3]** - [Son rôle, ex: Content Manager]
-  - GitHub: [@username3](https://github.com/username3)
-  - Contributions : Contenu, images, descriptions
+- **JOY** - Designer & Content Creator
+  - Contributions : Design, contenu visuel, identité de marque
   
-- **[NOM PERSONNE 4]** - [Son rôle, ex: Developer]
-  - GitHub: [@username4](https://github.com/username4)
-  - Contributions : Développement, code
+- **DIATA** - Developer & Designer
+  - Contributions : Développement, design, intégration
 
 ---
 
