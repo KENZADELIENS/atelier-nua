@@ -122,7 +122,7 @@ export function HomePage() {
         <div className="container mx-auto px-4 md:px-6">
           <h2 className="text-foreground mb-8 md:mb-12 text-center">À découvrir</h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 max-w-6xl mx-auto">
-            <div className="group cursor-pointer bg-card">
+            <Link to={`/exhibitions#expo-4`} className="group cursor-pointer bg-card block">
               <div className="h-64 md:h-96 overflow-hidden">
                 <img 
                   src={content1} 
@@ -134,8 +134,8 @@ export function HomePage() {
                 <h3 className="text-primary">L'Élégance Androgyne</h3>
                 <p className="text-gris-charbon">Découvrez une mode féminine audacieuse inspirée du vestiaire masculin classique, où le raffinement intemporel rencontre l'audace contemporaine.</p>
               </div>
-            </div>
-            <div className="group cursor-pointer bg-card">
+            </Link>
+            <Link to={`/exhibitions#expo-5`} className="group cursor-pointer bg-card block">
               <div className="h-64 md:h-96 overflow-hidden">
                 <img 
                   src={content2} 
@@ -147,7 +147,7 @@ export function HomePage() {
                 <h3 className="text-primary">Art & Couture</h3>
                 <p className="text-gris-charbon">Plongez dans l'univers où l'art rencontre la haute couture. Une exposition exceptionnelle célébrant la beauté des silhouettes dans un cadre architectural d'exception.</p>
               </div>
-            </div>
+            </Link>
           </div>
         </div>
       </section>

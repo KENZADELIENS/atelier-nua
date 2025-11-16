@@ -32,6 +32,14 @@ const exhibitions = [
     description: "Un voyage chronologique à travers les créations les plus emblématiques de la Maison Dior, célébrant trois quarts de siècle d'innovation en haute couture.",
     dates: "1er Juin - 30 Septembre 2025"
   }
+  ,
+  {
+    id: 5,
+    image: expo1,
+    title: "Collections Permanentes",
+    description: "Une sélection de pièces emblématiques provenant de nos archives permanentes.",
+    dates: "Permanent"
+  }
 ];
 
 export function ExhibitionsPage() {
