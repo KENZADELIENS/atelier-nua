@@ -8,12 +8,12 @@ export function AboutPage() {
         <div className="h-72 md:h-[500px] overflow-hidden">
           <img 
             src={galleryImage} 
-            alt="Intérieur de la galerie Atelier Nua" 
+            alt="Intérieur de la galerie ATELIER NUA" 
             className="w-full h-full object-cover"
           />
         </div>
         <div className="container mx-auto px-4 md:px-6 py-12 md:py-20 text-center">
-          <h1 className="text-primary mb-6">À propos de l'Atelier Nua</h1>
+          <h1 className="text-primary mb-6">À propos de l'ATELIER NUA</h1>
           <p className="text-gris-charbon max-w-3xl mx-auto italic font-accent text-lg">Une galerie d'art dédiée à la haute couture où l'excellence rencontre l'élégance intemporelle</p>
         </div>
       </section>
@@ -26,13 +26,13 @@ export function AboutPage() {
             <div className="bg-card p-8 md:p-16">
               <div className="space-y-6 max-w-3xl mx-auto text-gris-charbon">
                 <p className="text-lg leading-relaxed">
-                  L'Atelier Nua s'engage à célébrer l'art de la haute couture comme une forme d'expression artistique à part entière. Notre galerie offre un espace où la mode transcende le vêtement pour devenir œuvre d'art, où chaque pièce raconte une histoire d'excellence et de savoir-faire exceptionnel.
+                  L'ATELIER NUA s'engage à célébrer l'art de la haute couture comme une forme d'expression artistique à part entière. Notre galerie offre un espace où la mode transcende le vêtement pour devenir œuvre d'art, où chaque pièce raconte une histoire d'excellence et de savoir-faire exceptionnel.
                 </p>
                 <p className="leading-relaxed">
                   Nous croyons que la haute couture incarne la quintessence de la créativité humaine — un mariage parfait entre tradition artisanale et innovation contemporaine. Notre mission est de préserver cet héritage tout en explorant les frontières de la création moderne.
                 </p>
                 <p className="leading-relaxed">
-                  À travers des expositions soigneusement orchestrées, nous invitons nos visiteurs à découvrir l'univers fascinant des maisons de couture légendaires, à apprécier la minutie des détails et à comprendre le processus créatif derrière chaque création. L'Atelier Nua est un sanctuaire dédié à l'élégance intemporelle et à l'art du raffinement.
+                  À travers des expositions soigneusement orchestrées, nous invitons nos visiteurs à découvrir l'univers fascinant des maisons de couture légendaires, à apprécier la minutie des détails et à comprendre le processus créatif derrière chaque création. L'ATELIER NUA est un sanctuaire dédié à l'élégance intemporelle et à l'art du raffinement.
                 </p>
               </div>
             </div>
@@ -53,7 +53,7 @@ export function AboutPage() {
             <div className="flex-1 space-y-3">
               <h3 className="text-primary">La Genèse</h3>
               <p className="text-gris-charbon leading-relaxed">
-                Fondation de l'Atelier Nua dans le 8ème arrondissement de Paris, au cœur du Triangle d'Or. Notre vision : créer un espace dédié exclusivement à l'art de la haute couture, là où les créations des plus grands couturiers pourraient être admirées comme de véritables œuvres d'art.
+                Fondation de l'ATELIER NUA dans le 8ème arrondissement de Paris, au cœur du Triangle d'Or. Notre vision : créer un espace dédié exclusivement à l'art de la haute couture, là où les créations des plus grands couturiers pourraient être admirées comme de véritables œuvres d'art.
               </p>
             </div>
           </div>
@@ -81,7 +81,7 @@ export function AboutPage() {
             <div className="flex-1 space-y-3">
               <h3 className="text-primary">Reconnaissance Internationale</h3>
               <p className="text-gris-charbon leading-relaxed">
-                L'Atelier Nua devient une référence mondiale pour les expositions de haute couture. Partenariats établis avec les maisons Chanel, Yves Saint Laurent et Givenchy. Lancement de notre programme éducatif pour les jeunes créateurs et étudiants en mode.
+                L'ATELIER NUA devient une référence mondiale pour les expositions de haute couture. Partenariats établis avec les maisons Chanel, Yves Saint Laurent et Givenchy. Lancement de notre programme éducatif pour les jeunes créateurs et étudiants en mode.
               </p>
             </div>
           </div>
@@ -95,7 +95,7 @@ export function AboutPage() {
             <div className="flex-1 space-y-3">
               <h3 className="text-primary">L'Ère Numérique</h3>
               <p className="text-gris-charbon leading-relaxed">
-                Lancement de notre nouvelle identité visuelle et de notre plateforme digitale. L'Atelier Nua continue d'innover en proposant des expositions immersives qui marient tradition et modernité, tout en maintenant son engagement envers l'excellence et l'authenticité de la haute couture française.
+                Lancement de notre nouvelle identité visuelle et de notre plateforme digitale. L'ATELIER NUA continue d'innover en proposant des expositions immersives qui marient tradition et modernité, tout en maintenant son engagement envers l'excellence et l'authenticité de la haute couture française.
               </p>
             </div>
           </div>

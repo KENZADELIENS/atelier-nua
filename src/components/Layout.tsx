@@ -23,11 +23,8 @@ export function Layout() {
         <div className="container mx-auto px-4 md:px-6 py-6">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <Link 
-              to="/"
-              className="cursor-pointer group"
-            >
-              <h1 className="text-primary mb-0" style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', letterSpacing: '0.1em' }}>NUA ATELIER</h1>
+                        <Link to="/" className="flex items-center justify-center lg:justify-start">
+              <h1 className="text-primary mb-0" style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', letterSpacing: '0.1em' }}>ATELIER NUA</h1>
             </Link>
 
             {/* Desktop Navigation */}
@@ -157,7 +154,7 @@ export function Layout() {
             </div>
           </div>
           <div className="text-center border-t border-gris-perle pt-8">
-            <p className="text-gris-charbon text-sm italic font-accent">© 2025 Atelier Nua. Tous droits réservés.</p>
+            <p className="text-gris-charbon text-sm italic font-accent">© 2025 ATELIER NUA. Tous droits réservés.</p>
           </div>
         </div>
       </footer>

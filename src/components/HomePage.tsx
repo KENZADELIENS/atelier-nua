@@ -44,7 +44,7 @@ export function HomePage() {
           <div className="absolute inset-0 flex items-center justify-center px-4">
             <div className="text-center">
               <div className="inline-block px-10 md:px-20 py-8 md:py-12 bg-ivoire-satine/95 backdrop-blur-sm">
-                <div className="text-noir-onyx mb-8" style={{ fontFamily: 'var(--font-sans)', fontSize: 'clamp(0.9rem, 2vw, 1.5rem)', letterSpacing: '-0.02em', fontWeight: 400 }}>NUA ATELIER</div>
+                <div className="text-noir-onyx mb-8" style={{ fontFamily: 'var(--font-sans)', fontSize: 'clamp(0.9rem, 2vw, 1.5rem)', letterSpacing: '-0.02em', fontWeight: 400 }}>ATELIER NUA</div>
                 <button className="px-8 md:px-10 py-3 rounded-full bg-primary text-primary-foreground hover:opacity-90 transition-opacity">
                   Découvrir
                 </button>

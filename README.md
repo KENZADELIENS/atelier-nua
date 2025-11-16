@@ -1,7 +1,7 @@
 
-  # NUA ATELIER
+  # ATELIER NUA
 
-Site de la galerie NUA ATELIER.
+Site de la galerie ATELIER NUA.
 
 ## Démarrage rapide
 
