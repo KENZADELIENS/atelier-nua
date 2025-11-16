@@ -3,6 +3,10 @@
 
 Site de la galerie ATELIER NUA.
 
+## 👥 Contributeurs
+
+Voir [CONTRIBUTORS.md](./CONTRIBUTORS.md) pour la liste complète de l'équipe.
+
 ## Démarrage rapide
 
 1. Installation des dépendances :
