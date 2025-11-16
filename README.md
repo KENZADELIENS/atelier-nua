@@ -3,6 +3,8 @@
 
 Site de la galerie ATELIER NUA.
 
+> Note: Historique consolidé – contributions principales : Kenza. Ajustements mineurs documentés dans `CONTRIBUTORS.md`.
+
 ## 👥 Contributeurs
 
 Voir [CONTRIBUTORS.md](./CONTRIBUTORS.md) pour la liste complète de l'équipe.
