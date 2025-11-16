@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import expo1 from '@/assets/8bf368da1fdcfe53953f05698442e0a99577f3e5.png';
 import expo2 from '@/assets/7166cc1fd85092987888c984c630d6d9a1742d58.png';
 import expo3 from '@/assets/9e2dd313be55c7ba9c93fedfa68209361f708168.png';
@@ -43,6 +44,34 @@ const exhibitions = [
 ];
 
 export function ExhibitionsPage() {
+  // set simple page meta for SEO
+  useEffect(() => {
+    const prevTitle = document.title;
+    document.title = 'Expositions — ATELIER NUA';
+
+    let desc = document.head.querySelector('meta[name="description"][data-expo-list]') as HTMLMetaElement | null;
+    if (!desc) {
+      desc = document.createElement('meta');
+      desc.setAttribute('name', 'description');
+      desc.setAttribute('data-expo-list', 'true');
+      document.head.appendChild(desc);
+    }
+    desc.setAttribute('content', 'Découvrez les expositions actuelles et à venir d\'ATELIER NUA.');
+
+    let canonical = document.head.querySelector('link[rel="canonical"][data-expo-list]') as HTMLLinkElement | null;
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      canonical.setAttribute('data-expo-list', 'true');
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute('href', 'https://kenzadeliens.github.io/atelier-nua/exhibitions');
+
+    return () => {
+      document.title = prevTitle;
+      document.head.querySelectorAll('[data-expo-list]').forEach((n) => n.remove());
+    };
+  }, []);
   return (
     <div>
       {/* Page Header */}

@@ -16,6 +16,34 @@ export function HomePage() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
+    const prevTitle = document.title;
+    document.title = 'ATELIER NUA';
+
+    let desc = document.head.querySelector('meta[name="description"][data-home-meta]') as HTMLMetaElement | null;
+    if (!desc) {
+      desc = document.createElement('meta');
+      desc.setAttribute('name', 'description');
+      desc.setAttribute('data-home-meta', 'true');
+      document.head.appendChild(desc);
+    }
+    desc.setAttribute('content', "ATELIER NUA — Expositions, actualités et événements autour de la haute couture.");
+
+    let canonical = document.head.querySelector('link[rel="canonical"][data-home-meta]') as HTMLLinkElement | null;
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      canonical.setAttribute('data-home-meta', 'true');
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute('href', 'https://kenzadeliens.github.io/atelier-nua/');
+
+    return () => {
+      document.title = prevTitle;
+      document.head.querySelectorAll('[data-home-meta]').forEach((n) => n.remove());
+    };
+  }, []);
+
+  useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % bannerImages.length);
     }, 5000); // Change image every 5 seconds

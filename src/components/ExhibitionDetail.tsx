@@ -42,6 +42,20 @@ export function ExhibitionDetail() {
       setMeta('property', 'og:description', expo.description);
       setMeta('property', 'og:image', expo.image);
       setMeta('property', 'og:url', window.location.href);
+      setMeta('name', 'twitter:card', 'summary_large_image');
+      setMeta('name', 'twitter:title', `${expo.title} — ATELIER NUA`);
+      setMeta('name', 'twitter:description', expo.description);
+      setMeta('name', 'twitter:image', expo.image);
+
+      // canonical link
+      let canonical = document.head.querySelector('link[rel="canonical"][data-expo-meta]') as HTMLLinkElement | null;
+      if (!canonical) {
+        canonical = document.createElement('link');
+        canonical.setAttribute('rel', 'canonical');
+        canonical.setAttribute('data-expo-meta', 'true');
+        document.head.appendChild(canonical);
+      }
+      canonical.setAttribute('href', window.location.href);
 
       const ld = document.createElement('script');
       ld.type = 'application/ld+json';
