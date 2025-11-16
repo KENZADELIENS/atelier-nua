@@ -3,6 +3,16 @@
 
 Site de la galerie ATELIER NUA.
 
+  ## Architecture
+
+  Petite vue d'ensemble de l'architecture du projet :
+
+  - Frontend : Vite + React + TypeScript
+  - Styling : Tailwind CSS
+  - Déploiement : GitHub Pages via Actions
+
+  L'objectif est d'avoir une structure claire pour faciliter les évolutions futures.
+
 > Note: Historique consolidé – contributions principales : Kenza. Ajustements mineurs documentés dans `CONTRIBUTORS.md`.
 
 ## 👥 Contributeurs
