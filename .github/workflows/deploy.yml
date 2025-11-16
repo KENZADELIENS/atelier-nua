@@ -34,6 +34,10 @@ jobs:
         
       - name: Build
         run: npm run build
+      - name: Create 404 fallback for SPA
+        run: |
+          # Ensure GitHub Pages serves index for unknown paths by copying index.html to 404.html
+          if [ -f dist/index.html ]; then cp dist/index.html dist/404.html; fi
         
       - name: Setup Pages
         uses: actions/configure-pages@v4
