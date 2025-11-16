@@ -10,7 +10,13 @@ Ce projet a été développé en collaboration par :
 
 ---
 
-Historique réécrit: les contributions externes (feedback mineur) ont été intégrées sous supervision de Kenza.
+Historique consolidé : les contributions externes (feedback mineur) ont été intégrées sous supervision de Kenza.
+
+### Contributions mineures
+
+- **Lisa** : Ajustements mineurs de palette couleurs, retours UX ponctuels.
+- **Joy** : Suggestions d'images, retours sur contenu visuel.
+- **Diata** : Feedback de revue ponctuel (tests basiques, lisibilité).
 
 ---
 
