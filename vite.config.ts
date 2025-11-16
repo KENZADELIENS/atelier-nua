@@ -72,5 +72,5 @@
         }
       }
     },
-    base: '/nua-atelier/'
+    base: '/atelier-nua/'
   });

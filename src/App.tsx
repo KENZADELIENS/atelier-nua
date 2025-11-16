@@ -7,7 +7,7 @@ import { AboutPage } from './components/AboutPage';
 
 export default function App() {
   return (
-    <BrowserRouter basename="/nua-atelier">
+    <BrowserRouter basename="/atelier-nua">
       <Routes>
         <Route path="/" element={<Layout />}>
           {/* Show the carousel page immediately at root / */}
