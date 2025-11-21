@@ -4,21 +4,27 @@ Ce projet a été développé en collaboration par :
 
 ## Équipe de développement
 
-- **KENZA** - Lead Developer & Project Manager
+- **KENZA**
   - GitHub: [@KENZADELIENS](https://github.com/KENZADELIENS)
-  - Contributions : Développement intégral, architecture, design, déploiement
-  
-### Contributions mineures
+  - Contributions : Développement, architecture, design, déploiement
 
-- **Lisa** : Ajustements de palette couleurs, retours UX ponctuels.
-- **Joy** : Suggestions d'images, retours sur contenu visuel.
-- **Diata** : Feedback de revue ponctuel (tests basiques, lisibilité).
+- **DIATA**
+  - GitHub: [@diata29](https://github.com/diata29)
+  - Contributions : Développement, fonctionnalités, intégration
+
+- **LISA**
+  - GitHub: [@lisadg06](https://github.com/lisadg06)
+  - Contributions : Design, palette couleurs, expérience utilisateur
+
+- **JOY**
+  - GitHub: [@joyhaddad7](https://github.com/joyhaddad7)
+  - Contributions : Contenu visuel, images, assets graphiques
 
 ---
 
 ## Remerciements
 
-Merci à toute l'équipe pour leur travail sur ce projet !
+Merci à toute l'équipe pour leur travail collaboratif sur ce projet !
 
 ## Historique
 

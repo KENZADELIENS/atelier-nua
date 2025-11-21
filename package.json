@@ -66,8 +66,10 @@
       },
       "scripts": {
             "dev": "vite",
-            "build": "vite build",
-            "prerender": "node ./scripts/prerender.js",
-            "build:prerender": "npm run build && npm run prerender"
+                 "build": "tsc && vite build",
+                 "preview": "vite preview",
+                 "deploy": "npm run build && gh-pages -d dist",
+                 "lint": "eslint . --ext .js,.ts,.jsx,.tsx || true",
+                 "format": "prettier --write . || true"
       }
 }
