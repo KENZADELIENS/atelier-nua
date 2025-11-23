@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import bannerImage1 from '@/assets/c78f50749baacae6135ece7238683ff93f4df028.png';
+import bannerImage1w480 from '@/assets/c78f50749baacae6135ece7238683ff93f4df028-w480.png';
+import bannerImage1w768 from '@/assets/c78f50749baacae6135ece7238683ff93f4df028-w768.png';
+import bannerImage1w1280 from '@/assets/c78f50749baacae6135ece7238683ff93f4df028-w1280.png';
 import bannerImage2 from '@/assets/8aa6508c3d3ec9554057bec1d5f34a701809157a.png';
 import bannerImage3 from '@/assets/7a2752457eae20e59808d72b21ed53c3ec485d64.png';
 import bannerImage4 from '@/assets/ce1e711710eac0b7440a68ba115e78614269c050.png';
@@ -78,15 +81,26 @@ export function HomePage() {
                 index === currentSlide ? 'opacity-100' : 'opacity-0'
               }`}
             >
-              <img 
-                src={image}
-                alt={`Gallery Exhibition ${index + 1}`} 
-                className="w-full h-full object-cover"
-                decoding="async"
-                {...(index === currentSlide
-                  ? { loading: 'eager' as const, fetchpriority: 'high' as const }
-                  : { loading: 'lazy' as const })}
-              />
+              {index === 0 ? (
+                <img
+                  src={bannerImage1w768}
+                  srcSet={`${bannerImage1w480} 480w, ${bannerImage1w768} 768w, ${bannerImage1w1280} 1280w`}
+                  sizes="100vw"
+                  alt={`Gallery Exhibition ${index + 1}`}
+                  className="w-full h-full object-cover"
+                  decoding="async"
+                  loading="eager"
+                  fetchpriority="high"
+                />
+              ) : (
+                <img
+                  src={image}
+                  alt={`Gallery Exhibition ${index + 1}`}
+                  className="w-full h-full object-cover"
+                  decoding="async"
+                  loading="lazy"
+                />
+              )}
             </div>
           ))}
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/15 to-transparent"></div>
