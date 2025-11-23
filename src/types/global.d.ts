@@ -15,10 +15,6 @@ declare module '*.svg' {
   const src: string;
   export default src;
 }
-declare module '*.webp' {
-  const src: string;
-  export default src;
-}
 
 // Fallback for other static assets
 // Figma asset imports (they resolve to file paths at build time)

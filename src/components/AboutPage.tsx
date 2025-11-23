@@ -1,4 +1,4 @@
-import galleryImage from '@/assets/e5ddc2e1f568b71da3a9f5267611fbdd44e6ddef.webp';
+import galleryImage from '@/assets/e5ddc2e1f568b71da3a9f5267611fbdd44e6ddef.png';
 
 export function AboutPage() {
   return (

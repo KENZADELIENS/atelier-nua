@@ -1,8 +1,6 @@
 
   # ATELIER NUA
 
-  [![Deploy to GitHub Pages](https://github.com/KENZADELIENS/atelier-nua/actions/workflows/deploy.yml/badge.svg?branch=solo-history)](https://github.com/KENZADELIENS/atelier-nua/actions/workflows/deploy.yml)
-
 Site de la galerie ATELIER NUA.
 
   ## Architecture
@@ -37,7 +35,6 @@ npm run dev
 ```bash
 npm run build
 ```
-> Astuce: le build optimise automatiquement les images (PNG → WebP) pour des temps de chargement plus rapides.
 
 ## Déploiement automatique (GitHub Pages)
 
