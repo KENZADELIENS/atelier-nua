@@ -52,12 +52,7 @@ export function HomePage() {
     return () => clearInterval(interval);
   }, []);
 
-  // Preload the next slide image to make transitions instant
-  useEffect(() => {
-    const nextIndex = (currentSlide + 1) % bannerImages.length;
-    const img = new Image();
-    img.src = bannerImages[nextIndex];
-  }, [currentSlide]);
+  
 
   const scrollToActuellement = () => {
     const section = document.getElementById('actuellement-section');
@@ -82,10 +77,6 @@ export function HomePage() {
                 src={image}
                 alt={`Gallery Exhibition ${index + 1}`} 
                 className="w-full h-full object-cover"
-                decoding="async"
-                {...(index === currentSlide
-                  ? { loading: 'eager' as const, fetchpriority: 'high' as const }
-                  : { loading: 'lazy' as const })}
               />
             </div>
           ))}
@@ -143,9 +134,6 @@ export function HomePage() {
                     <img
                       src={expo.img}
                       alt={expo.title}
-                      loading="lazy"
-                      decoding="async"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                 </div>
@@ -170,9 +158,6 @@ export function HomePage() {
                 <img 
                   src={content1} 
                   alt="Mannequin en manteau vintage avec haut-de-forme" 
-                  loading="lazy"
-                  decoding="async"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 cursor-pointer"
                   // fallback navigation in case Link isn't handling the click for any reason
                   onClick={(e) => { e.preventDefault(); navigate('/exhibitions/4'); }}
@@ -188,9 +173,6 @@ export function HomePage() {
                   <img 
                     src={content2} 
                     alt="Collection de robes haute couture avec fresques classiques" 
-                    loading="lazy"
-                    decoding="async"
-                    sizes="(max-width: 1024px) 100vw, 50vw"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 cursor-pointer"
                     onClick={(e) => { e.preventDefault(); navigate('/exhibitions/5'); }}
                   />
