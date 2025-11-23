@@ -6,12 +6,24 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["var(--font-sans)"],
+        serif: ["var(--font-serif)"],
+        accent: ["var(--font-accent)"],
+      },
       colors: {
         border: "var(--border)",
         input: "var(--input)",
         ring: "var(--ring)",
         background: "var(--background)",
         foreground: "var(--foreground)",
+        "ivoire-satine": "var(--ivoire-satine)",
+        "dore-champagne": "var(--dore-champagne)",
+        "rose-nua": "var(--rose-nua)",
+        "beige-rose": "var(--beige-rose)",
+        "gris-perle": "var(--gris-perle)",
+        "gris-charbon": "var(--gris-charbon)",
+        "noir-onyx": "var(--noir-onyx)",
         primary: {
           DEFAULT: "var(--primary)",
           foreground: "var(--primary-foreground)",
