@@ -1,4 +1,4 @@
-import mapImage from '@/assets/5b6a581430eb1e05becc5c2dff6f385b5acb4cf2.png';
+import mapImage from '@/assets/5b6a581430eb1e05becc5c2dff6f385b5acb4cf2.webp';
 
 export function VisitPage() {
   return (
