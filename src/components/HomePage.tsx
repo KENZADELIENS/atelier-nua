@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import bannerImage1 from '@/assets/c78f50749baacae6135ece7238683ff93f4df028.webp';
 import bannerImage2 from '@/assets/8aa6508c3d3ec9554057bec1d5f34a701809157a.webp';
@@ -13,7 +13,6 @@ import content2 from '@/assets/e5ea3ee51df71932950750bedc5f36be075fc84e.webp';
 const bannerImages = [bannerImage1, bannerImage2, bannerImage3, bannerImage4];
 
 export function HomePage() {
-  const [currentSlide, setCurrentSlide] = useState(0);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -44,13 +43,7 @@ export function HomePage() {
     };
   }, []);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % bannerImages.length);
-    }, 5000); // Change image every 5 seconds
-
-    return () => clearInterval(interval);
-  }, []);
+  // No carousel: display a horizontal row of images like the initial design
 
   const scrollToActuellement = () => {
     const section = document.getElementById('actuellement-section');
@@ -61,29 +54,30 @@ export function HomePage() {
 
   return (
     <div>
-      {/* Hero Section */}
+      {/* Hero Section: horizontal images row */}
       <section className="relative border-b border-border">
-        <div className="relative h-[400px] md:h-[600px] lg:h-[700px] overflow-hidden">
-          {bannerImages.map((image, index) => (
-            <div
-              key={index}
-              className={`absolute inset-0 transition-opacity duration-1000 ${
-                index === currentSlide ? 'opacity-100' : 'opacity-0'
-              }`}
-            >
-              <img 
-                src={image} 
-                alt={`Gallery Exhibition ${index + 1}`} 
-                className="w-full h-full object-cover"
-              />
-            </div>
-          ))}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/15 to-transparent"></div>
-          <div className="absolute inset-0 flex items-center justify-center px-4">
+        <div className="container mx-auto px-4 md:px-6 py-6 md:py-10">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+            {bannerImages.map((image, index) => (
+              <div key={index} className="overflow-hidden">
+                <img
+                  src={image}
+                  alt={`Gallery Exhibition ${index + 1}`}
+                  className="w-full h-40 md:h-56 lg:h-64 object-cover hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+            ))}
+          </div>
+          <div className="mt-6 flex items-center justify-center">
             <div className="text-center">
-              <div className="inline-block px-10 md:px-20 py-8 md:py-12 bg-ivoire-satine/95 backdrop-blur-sm">
-                <div className="text-noir-onyx mb-8" style={{ fontFamily: 'var(--font-sans)', fontSize: 'clamp(0.9rem, 2vw, 1.5rem)', letterSpacing: '-0.02em', fontWeight: 400 }}>ATELIER NUA</div>
-                <button 
+              <div className="inline-block px-8 md:px-14 py-6 md:py-8 bg-ivoire-satine/95 backdrop-blur-sm">
+                <div
+                  className="text-noir-onyx mb-6"
+                  style={{ fontFamily: 'var(--font-sans)', fontSize: 'clamp(0.9rem, 2vw, 1.5rem)', letterSpacing: '-0.02em', fontWeight: 400 }}
+                >
+                  ATELIER NUA
+                </div>
+                <button
                   onClick={scrollToActuellement}
                   className="px-8 md:px-10 py-3 rounded-full bg-primary text-primary-foreground hover:opacity-90 transition-opacity"
                 >
@@ -91,22 +85,6 @@ export function HomePage() {
                 </button>
               </div>
             </div>
-          </div>
-          
-          {/* Carousel Dots */}
-          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-            {bannerImages.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentSlide(index)}
-                className={`w-2 h-2 rounded-full transition-all ${
-                  index === currentSlide 
-                    ? 'bg-ivoire-satine w-8' 
-                    : 'bg-ivoire-satine/50 hover:bg-ivoire-satine/75'
-                }`}
-                aria-label={`Go to slide ${index + 1}`}
-              />
-            ))}
           </div>
         </div>
       </section>
