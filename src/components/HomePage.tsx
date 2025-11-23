@@ -44,7 +44,13 @@ export function HomePage() {
     };
   }, []);
 
-  // Restore original meta handling
+  // Auto-advance carousel every 5 seconds (original behavior)
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % bannerImages.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
 
   const scrollToActuellement = () => {
     const section = document.getElementById('actuellement-section');
