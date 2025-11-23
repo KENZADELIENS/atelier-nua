@@ -29,7 +29,7 @@ const exhibitions = [
   },
   {
     id: 5,
-    image: '/atelier-nua/assets/e5ea3ee51df71932950750bedc5f36be075fc84e.png',
+    image: '/atelier-nua/assets/8bf368da1fdcfe53953f05698442e0a99577f3e5.png',
     title: "Collections Permanentes",
     description: "Une sélection de pièces emblématiques provenant de nos archives permanentes.",
     dates: "Permanent"
