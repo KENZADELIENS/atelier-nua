@@ -16,6 +16,22 @@
     <!-- Theme color -->
     <meta name="theme-color" content="#0b0b0b" />
 
+    <!-- Fonts: preconnect + stylesheet (faster than @import) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700&family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&display=swap"
+    />
+
+    <!-- Preload LCP hero image for faster paint -->
+    <link
+      rel="preload"
+      as="image"
+      href="/src/assets/c78f50749baacae6135ece7238683ff93f4df028.png"
+      fetchpriority="high"
+    />
+
     <!-- Open Graph -->
     <meta property="og:locale" content="fr_FR" />
     <meta property="og:type" content="website" />
