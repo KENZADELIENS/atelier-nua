@@ -54,19 +54,21 @@ export function HomePage() {
 
   return (
     <div>
-      {/* Hero Section: horizontal images row */}
+      {/* Hero Section: force a single horizontal row (scrollable on small screens) */}
       <section className="relative border-b border-border">
         <div className="container mx-auto px-4 md:px-6 py-6 md:py-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
-            {bannerImages.map((image, index) => (
-              <div key={index} className="overflow-hidden">
-                <img
-                  src={image}
-                  alt={`Gallery Exhibition ${index + 1}`}
-                  className="w-full h-40 md:h-56 lg:h-64 object-cover hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-            ))}
+          <div className="overflow-x-auto">
+            <div className="flex gap-3 md:gap-4 min-w-max">
+              {bannerImages.map((image, index) => (
+                <div key={index} className="shrink-0 overflow-hidden">
+                  <img
+                    src={image}
+                    alt={`Gallery Exhibition ${index + 1}`}
+                    className="h-40 md:h-56 lg:h-64 aspect-[4/3] object-cover hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
           <div className="mt-6 flex items-center justify-center">
             <div className="text-center">
