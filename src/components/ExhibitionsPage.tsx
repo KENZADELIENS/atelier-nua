@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import expo1 from '@/assets/8bf368da1fdcfe53953f05698442e0a99577f3e5.png';
-import expo2 from '@/assets/7166cc1fd85092987888c984c630d6d9a1742d58.png';
-import expo3 from '@/assets/9e2dd313be55c7ba9c93fedfa68209361f708168.png';
-import expo4 from '@/assets/a1b61531356be3491695e077958b10f5a615c4b8.png';
+import expo1 from '@/assets/8bf368da1fdcfe53953f05698442e0a99577f3e5.webp';
+import expo2 from '@/assets/7166cc1fd85092987888c984c630d6d9a1742d58.webp';
+import expo3 from '@/assets/9e2dd313be55c7ba9c93fedfa68209361f708168.webp';
+import expo4 from '@/assets/a1b61531356be3491695e077958b10f5a615c4b8.webp';
 
 const exhibitions = [
   {

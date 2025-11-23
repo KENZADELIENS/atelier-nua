@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import bannerImage1 from '@/assets/c78f50749baacae6135ece7238683ff93f4df028.png';
-import bannerImage2 from '@/assets/8aa6508c3d3ec9554057bec1d5f34a701809157a.png';
-import bannerImage3 from '@/assets/7a2752457eae20e59808d72b21ed53c3ec485d64.png';
-import bannerImage4 from '@/assets/ce1e711710eac0b7440a68ba115e78614269c050.png';
-import exhibition1 from '@/assets/7166cc1fd85092987888c984c630d6d9a1742d58.png';
-import exhibition2 from '@/assets/9e2dd313be55c7ba9c93fedfa68209361f708168.png';
-import exhibition3 from '@/assets/a1b61531356be3491695e077958b10f5a615c4b8.png';
-import content1 from '@/assets/8bf368da1fdcfe53953f05698442e0a99577f3e5.png';
-import content2 from '@/assets/e5ea3ee51df71932950750bedc5f36be075fc84e.png';
+import bannerImage1 from '@/assets/c78f50749baacae6135ece7238683ff93f4df028.webp';
+import bannerImage2 from '@/assets/8aa6508c3d3ec9554057bec1d5f34a701809157a.webp';
+import bannerImage3 from '@/assets/7a2752457eae20e59808d72b21ed53c3ec485d64.webp';
+import bannerImage4 from '@/assets/ce1e711710eac0b7440a68ba115e78614269c050.webp';
+import exhibition1 from '@/assets/7166cc1fd85092987888c984c630d6d9a1742d58.webp';
+import exhibition2 from '@/assets/9e2dd313be55c7ba9c93fedfa68209361f708168.webp';
+import exhibition3 from '@/assets/a1b61531356be3491695e077958b10f5a615c4b8.webp';
+import content1 from '@/assets/8bf368da1fdcfe53953f05698442e0a99577f3e5.webp';
+import content2 from '@/assets/e5ea3ee51df71932950750bedc5f36be075fc84e.webp';
 
 const bannerImages = [bannerImage1, bannerImage2, bannerImage3, bannerImage4];
 
