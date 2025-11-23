@@ -2,14 +2,34 @@
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="ATELIER NUA - Galerie d'art haute couture" />
-    <meta name="keywords" content="galerie d'art, haute couture, mode luxe" />
-    <title>ATELIER-NUA</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>ATELIER NUA | Galerie haute couture & mode luxe</
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="/css/style.css" />
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/main.tsx"></script>
+    <div id="root">
+      <header>
+        <h1>ATELIER NUA</h1>
+        <p>Galerie haute couture & mode luxe</p>
+        <nav aria-label="Navigation principale">
+          <ul class="nav">
+            <li><a href="#collections">Collections</a></li>
+          </ul>
+        </nav>
+      </header>
+      <main role="main">
+        <section id="collections">
+          <h2>Collections</h2>
+          <div class="gallery-grid" aria-live="polite">
+            <!-- Ajouter vos images ici -->
+          </div>
+        </section>
+      </main>
+      <footer>
+        <p>&copy; 2025 ATELIER NUA. Tous droits réservés.</p>
+      </footer>
+    </div>
+    <script src="/js/main.js" defer></script>
   </body>
 </html>

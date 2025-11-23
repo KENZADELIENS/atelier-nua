@@ -67,7 +67,9 @@ export default defineConfig({
     minify: true,
     rollupOptions: {
       output: {
-        manualChunks: undefined
+        manualChunks: {
+          vendor: ['react', 'react-dom']
+        }
       }
     }
   },
