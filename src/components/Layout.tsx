@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { Menu, X } from 'lucide-react';
 import { Link, Outlet, useLocation } from 'react-router-dom';
 
 export function Layout() {
@@ -52,7 +51,9 @@ export function Layout() {
               className="md:hidden p-2 border border-border hover:border-primary transition-colors"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
-              {mobileMenuOpen ? <X size={24} className="text-primary" /> : <Menu size={24} className="text-primary" />}
+              <span className="text-primary text-sm uppercase tracking-wider">
+                {mobileMenuOpen ? 'Fermer' : 'Menu'}
+              </span>
             </button>
           </div>
 
@@ -86,7 +87,6 @@ export function Layout() {
       </main>
 
       {/* Footer */}
-      {/* Minor formatting suggestion (spacing) - Joy */}
       <footer className="border-t border-border bg-card mt-auto">
         <div className="container mx-auto px-4 md:px-6 py-12 md:py-16">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-12">
