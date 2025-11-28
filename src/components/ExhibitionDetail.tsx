@@ -3,81 +3,61 @@ import { useEffect } from 'react';
 import exhibitions from '@/data/exhibitions';
 
 export function ExhibitionDetail() {
-  const { id } = useParams();
-  const expo = exhibitions.find((e) => String(e.id) === id);
-
-  if (!expo) {
-    return (
-      <div className="container mx-auto px-4 py-20 text-center">
-        <h2 className="text-primary">Exposition introuvable</h2>
-        <p className="mt-4">Cette exposition n'existe pas ou a été déplacée.</p>
-        <div className="mt-6">
-          <Link to="/exhibitions" className="text-primary underline">Retour aux expositions</Link>
-        </div>
-      </div>
-    );
-  }
+  const params = useParams();
+  const id = Number(params.id);
+  const expo = (Array.isArray(exhibitions) ? exhibitions : []).find((e: any) => e.id === id) || (exhibitions as any)[0];
 
   useEffect(() => {
-    if (!expo) return;
-
     const prevTitle = document.title;
-    document.title = `${expo.title} — ATELIER NUA`;
+    const schedule = (cb: () => void) =>
+      (('requestIdleCallback' in window)
+        ? (window as any).requestIdleCallback(cb)
+        : setTimeout(cb, 1));
 
-    const setMeta = (attr: 'name' | 'property', name: string, content: string) => {
-      let el = document.head.querySelector(`meta[${attr}="${name}"][data-expo-meta]`) as HTMLMetaElement | null;
-      if (!el) {
-        el = document.createElement('meta');
-        el.setAttribute('data-expo-meta', 'true');
-        el.setAttribute(attr, name);
-        document.head.appendChild(el);
-      }
-      el.setAttribute('content', content);
-      return el;
-    };
+    schedule(() => {
+      document.title = `${expo.title} — ATELIER NUA`;
 
-    try {
-      setMeta('name', 'description', expo.description);
-      setMeta('property', 'og:title', `${expo.title} — ATELIER NUA`);
-      setMeta('property', 'og:description', expo.description);
-      setMeta('property', 'og:image', expo.image);
-      setMeta('property', 'og:url', window.location.href);
-      setMeta('name', 'twitter:card', 'summary_large_image');
-      setMeta('name', 'twitter:title', `${expo.title} — ATELIER NUA`);
-      setMeta('name', 'twitter:description', expo.description);
-      setMeta('name', 'twitter:image', expo.image);
-
-      // canonical link
-      let canonical = document.head.querySelector('link[rel="canonical"][data-expo-meta]') as HTMLLinkElement | null;
-      if (!canonical) {
-        canonical = document.createElement('link');
-        canonical.setAttribute('rel', 'canonical');
-        canonical.setAttribute('data-expo-meta', 'true');
-        document.head.appendChild(canonical);
-      }
-      canonical.setAttribute('href', window.location.href);
-
-      const ld = document.createElement('script');
-      ld.type = 'application/ld+json';
-      ld.setAttribute('data-expo-meta', 'true');
-      const ldObj = {
-        '@context': 'https://schema.org',
-        '@type': 'ExhibitionEvent',
-        name: expo.title,
-        description: expo.description,
-        image: expo.image,
-        url: window.location.href,
-        location: {
-          '@type': 'Place',
-          name: 'ATELIER NUA',
-          url: 'https://kenzadeliens.github.io/atelier-nua/'
+      try {
+        let desc = document.head.querySelector('meta[name="description"][data-expo-meta]') as HTMLMetaElement | null;
+        if (!desc) {
+          desc = document.createElement('meta');
+          desc.setAttribute('name', 'description');
+          desc.setAttribute('data-expo-meta', 'true');
+          document.head.appendChild(desc);
         }
-      };
-      ld.textContent = JSON.stringify(ldObj);
-      document.head.appendChild(ld);
-    } catch (e) {
-      // Silently ignore meta tag errors
-    }
+        desc.setAttribute('content', expo.description);
+
+        let canonical = document.head.querySelector('link[rel="canonical"][data-expo-meta]') as HTMLLinkElement | null;
+        if (!canonical) {
+          canonical = document.createElement('link');
+          canonical.setAttribute('rel', 'canonical');
+          canonical.setAttribute('data-expo-meta', 'true');
+          document.head.appendChild(canonical);
+        }
+        canonical.setAttribute('href', window.location.href);
+
+        const ld = document.createElement('script');
+        ld.type = 'application/ld+json';
+        ld.setAttribute('data-expo-meta', 'true');
+        const ldObj = {
+          '@context': 'https://schema.org',
+          '@type': 'ExhibitionEvent',
+          name: expo.title,
+          description: expo.description,
+          image: expo.image,
+          url: window.location.href,
+          location: {
+            '@type': 'Place',
+            name: 'ATELIER NUA',
+            url: 'https://kenzadeliens.github.io/atelier-nua/'
+          }
+        } as any;
+        ld.textContent = JSON.stringify(ldObj);
+        document.head.appendChild(ld);
+      } catch (e) {
+        // ignore
+      }
+    });
 
     return () => {
       document.title = prevTitle;
@@ -94,6 +74,9 @@ export function ExhibitionDetail() {
         <h1 className="text-primary mb-4">{expo.title}</h1>
         <p className="text-gris-charbon mb-6">{expo.description}</p>
         <p className="italic font-accent text-gris-charbon">{expo.dates}</p>
+        <div className="mt-8">
+          <Link to="/exhibitions" className="px-8 py-3 rounded-full border border-gris-perle hover:border-primary hover:text-primary transition-colors">← Retour aux expositions</Link>
+        </div>
       </div>
     </div>
   );
