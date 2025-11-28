@@ -26,13 +26,12 @@ async function optimizeImages() {
     const beforeSize = beforeStats.size;
     totalBefore += beforeSize;
     
-    // Compress PNG with quality 85, strip metadata, use adaptive filtering
+    // Compress PNG with quality 95 for near-lossless compression
     await sharp(inputPath)
       .png({ 
-        quality: 85,
+        quality: 95,
         compressionLevel: 9,
-        adaptiveFiltering: true,
-        palette: true
+        adaptiveFiltering: true
       })
       .toFile(outputPath + '.tmp');
     
