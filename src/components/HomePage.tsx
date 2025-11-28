@@ -18,25 +18,32 @@ export function HomePage() {
 
   useEffect(() => {
     const prevTitle = document.title;
-    document.title = 'ATELIER NUA';
+    const schedule = (cb: () => void) =>
+      (('requestIdleCallback' in window)
+        ? (window as any).requestIdleCallback(cb)
+        : setTimeout(cb, 1));
 
-    let desc = document.head.querySelector('meta[name="description"][data-home-meta]') as HTMLMetaElement | null;
-    if (!desc) {
-      desc = document.createElement('meta');
-      desc.setAttribute('name', 'description');
-      desc.setAttribute('data-home-meta', 'true');
-      document.head.appendChild(desc);
-    }
-    desc.setAttribute('content', "ATELIER NUA — Expositions, actualités et événements autour de la haute couture.");
+    schedule(() => {
+      document.title = 'ATELIER NUA';
 
-    let canonical = document.head.querySelector('link[rel="canonical"][data-home-meta]') as HTMLLinkElement | null;
-    if (!canonical) {
-      canonical = document.createElement('link');
-      canonical.setAttribute('rel', 'canonical');
-      canonical.setAttribute('data-home-meta', 'true');
-      document.head.appendChild(canonical);
-    }
-    canonical.setAttribute('href', 'https://kenzadeliens.github.io/atelier-nua/');
+      let desc = document.head.querySelector('meta[name="description"][data-home-meta]') as HTMLMetaElement | null;
+      if (!desc) {
+        desc = document.createElement('meta');
+        desc.setAttribute('name', 'description');
+        desc.setAttribute('data-home-meta', 'true');
+        document.head.appendChild(desc);
+      }
+      desc.setAttribute('content', "ATELIER NUA — Expositions, actualités et événements autour de la haute couture.");
+
+      let canonical = document.head.querySelector('link[rel="canonical"][data-home-meta]') as HTMLLinkElement | null;
+      if (!canonical) {
+        canonical = document.createElement('link');
+        canonical.setAttribute('rel', 'canonical');
+        canonical.setAttribute('data-home-meta', 'true');
+        document.head.appendChild(canonical);
+      }
+      canonical.setAttribute('href', 'https://kenzadeliens.github.io/atelier-nua/');
+    });
 
     return () => {
       document.title = prevTitle;

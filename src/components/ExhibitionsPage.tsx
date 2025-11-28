@@ -45,28 +45,35 @@ const exhibitions = [
 ];
 
 export function ExhibitionsPage() {
-  // set simple page meta for SEO
+  // set simple page meta for SEO, deferred to idle
   useEffect(() => {
     const prevTitle = document.title;
-    document.title = 'Expositions — ATELIER NUA';
+    const schedule = (cb: () => void) =>
+      (('requestIdleCallback' in window)
+        ? (window as any).requestIdleCallback(cb)
+        : setTimeout(cb, 1));
 
-    let desc = document.head.querySelector('meta[name="description"][data-expo-list]') as HTMLMetaElement | null;
-    if (!desc) {
-      desc = document.createElement('meta');
-      desc.setAttribute('name', 'description');
-      desc.setAttribute('data-expo-list', 'true');
-      document.head.appendChild(desc);
-    }
-    desc.setAttribute('content', 'Découvrez les expositions actuelles et à venir d\'ATELIER NUA.');
+    schedule(() => {
+      document.title = 'Expositions — ATELIER NUA';
 
-    let canonical = document.head.querySelector('link[rel="canonical"][data-expo-list]') as HTMLLinkElement | null;
-    if (!canonical) {
-      canonical = document.createElement('link');
-      canonical.setAttribute('rel', 'canonical');
-      canonical.setAttribute('data-expo-list', 'true');
-      document.head.appendChild(canonical);
-    }
-    canonical.setAttribute('href', 'https://kenzadeliens.github.io/atelier-nua/exhibitions');
+      let desc = document.head.querySelector('meta[name="description"][data-expo-list]') as HTMLMetaElement | null;
+      if (!desc) {
+        desc = document.createElement('meta');
+        desc.setAttribute('name', 'description');
+        desc.setAttribute('data-expo-list', 'true');
+        document.head.appendChild(desc);
+      }
+      desc.setAttribute('content', 'Découvrez les expositions actuelles et à venir d\'ATELIER NUA.');
+
+      let canonical = document.head.querySelector('link[rel="canonical"][data-expo-list]') as HTMLLinkElement | null;
+      if (!canonical) {
+        canonical = document.createElement('link');
+        canonical.setAttribute('rel', 'canonical');
+        canonical.setAttribute('data-expo-list', 'true');
+        document.head.appendChild(canonical);
+      }
+      canonical.setAttribute('href', 'https://kenzadeliens.github.io/atelier-nua/exhibitions');
+    });
 
     return () => {
       document.title = prevTitle;
