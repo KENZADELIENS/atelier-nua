@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import bannerImage1 from '@/assets/c78f50749baacae6135ece7238683ff93f4df028.png';
 import bannerImage2 from '@/assets/8aa6508c3d3ec9554057bec1d5f34a701809157a.png';
 import bannerImage3 from '@/assets/7a2752457eae20e59808d72b21ed53c3ec485d64.png';
@@ -14,7 +14,6 @@ const bannerImages = [bannerImage1, bannerImage2, bannerImage3, bannerImage4];
 
 export function HomePage() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const navigate = useNavigate();
 
   useEffect(() => {
     const prevTitle = document.title;
@@ -124,9 +123,9 @@ export function HomePage() {
       <section id="actuellement-section" className="container mx-auto px-4 md:px-6 py-12 md:py-20">
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 md:mb-12 gap-4">
           <h2 className="text-foreground">Actuellement</h2>
-          <button className="px-6 md:px-8 py-2 rounded-full border border-gris-perle text-gris-charbon hover:border-primary hover:text-primary transition-all">
+          <Link to="/exhibitions" className="px-6 md:px-8 py-2 rounded-full border border-gris-perle text-gris-charbon hover:border-primary hover:text-primary transition-all">
             Tout voir →
-          </button>
+          </Link>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
