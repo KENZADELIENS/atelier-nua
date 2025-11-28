@@ -158,9 +158,7 @@ export function HomePage() {
                 <img 
                   src={content1} 
                   alt="Mannequin en manteau vintage avec haut-de-forme" 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 cursor-pointer"
-                  // fallback navigation in case Link isn't handling the click for any reason
-                  onClick={(e) => { e.preventDefault(); navigate('/exhibitions/4'); }}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
               <div className="p-6 md:p-8 space-y-3">
@@ -173,8 +171,7 @@ export function HomePage() {
                   <img 
                     src={content2} 
                     alt="Collection de robes haute couture avec fresques classiques" 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 cursor-pointer"
-                    onClick={(e) => { e.preventDefault(); navigate('/exhibitions/5'); }}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
               </div>
               <div className="p-6 md:p-8 space-y-3">

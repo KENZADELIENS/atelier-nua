@@ -76,8 +76,7 @@ export function ExhibitionDetail() {
       ld.textContent = JSON.stringify(ldObj);
       document.head.appendChild(ld);
     } catch (e) {
-      // eslint-disable-next-line no-console
-      console.warn('Failed to set meta tags for exhibition', e);
+      // Silently ignore meta tag errors
     }
 
     return () => {
