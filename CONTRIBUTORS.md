@@ -2,11 +2,11 @@
 
 Ce projet a été développé en collaboration par :
 
-## Équipe de développement
+## Équipe de développemen
 
 - **KENZA**
   - GitHub: [@KENZADELIENS](https://github.com/KENZADELIENS)
-  - Contributions : Développement, architecture, design, déploiement
+  - Contributions : Développement, architecture, design, déploiemen
 
 - **DIATA**
   - GitHub: [@diata29](https://github.com/diata29)
