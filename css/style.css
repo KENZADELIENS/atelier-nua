@@ -1,0 +1,16 @@
+/* ATELIER NUA - Styles */
+/* Note: Le site utilise Tailwind CSS compilé via Vite */
+/* Les styles de production sont dans dist/assets/ */
+
+:root {
+    --primary: #2c3e50;
+    --secondary: #ecf0f1;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Pour plus de détails, voir src/index.css et tailwind.config.js */
